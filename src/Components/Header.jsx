@@ -1,6 +1,64 @@
 import '../style.css'
+import { useEffect } from 'react';
+import logo from '../assets/images/logo.svg'
 
 export const Header = () => {
+  useEffect(() => {
+    const navbar = document.querySelector("[data-navbar]");
+    const navTogglers = document.querySelectorAll("[data-nav-toggler]");
+    const overlay = document.querySelector("[data-overlay]");
+
+    const toggleNavbar = () => {
+      navbar.classList.toggle("active");
+      overlay.classList.toggle("active");
+      document.body.classList.toggle("nav-active");
+    };
+
+    const addEventOnElements = (elements, event, callback) => {
+      elements.forEach(element => {
+        element.addEventListener(event, callback);
+      });
+    };
+
+    addEventOnElements(navTogglers, "click", toggleNavbar);
+
+    const header = document.querySelector("[data-header]");
+    const backTopBtn = document.querySelector("[data-back-top-btn]");
+
+    let lastScrollPos = 0;
+
+    const hideHeader = () => {
+      const isScrollBottom = lastScrollPos < window.scrollY;
+      if (isScrollBottom) {
+        header.classList.add("hide");
+      } else {
+        header.classList.remove("hide");
+      }
+
+      lastScrollPos = window.scrollY;
+    };
+
+    const handleScroll = () => {
+      if (window.scrollY >= 50) {
+        header.classList.add("active");
+        backTopBtn.classList.add("active");
+        hideHeader();
+      } else {
+        header.classList.remove("active");
+        backTopBtn.classList.remove("active");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup function
+    return () => {
+      navTogglers.forEach(element => {
+        element.removeEventListener("click", toggleNavbar);
+      });
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); 
   return (
     <header className="header" data-header>
     <div className="container">
@@ -16,7 +74,7 @@ export const Header = () => {
         </button>
 
         <a href="#" className="logo">
-          <img src="../assets/images/logo.svg" width="160" height="50" alt="Grilli - Home" />
+          <img src={logo} width="160" height="50" alt="Grilli - Home" />
         </a>
 
         <ul className="navbar-list">

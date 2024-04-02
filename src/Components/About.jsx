@@ -1,4 +1,7 @@
 import '../style.css'
+import about from '../assets/images/about-banner.jpg'
+import a1 from '../assets/images/about-abs-image.jpg'
+
 
 const About = () => {
     return (
@@ -20,7 +23,7 @@ const About = () => {
                     </a>
                 </div>
                 <div className="about-banner">
-                    <img src="./assets/images/about-banner.jpg" width="570" height="570" loading="lazy" alt="about banner"
+                    <img src={about} width="570" height="570" loading="lazy" alt="about banner"
                         className="w-100" data-parallax-item data-parallax-speed="1" />
                     <div className="abs-img abs-img-1 has-before" data-parallax-item data-parallax-speed="1.75">
                         <img src="./assets/images/about-abs-image.jpg" width="285" height="285" loading="lazy" alt=""

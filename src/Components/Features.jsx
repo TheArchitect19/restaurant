@@ -1,4 +1,12 @@
 import '../style.css'
+import f1 from '../assets/images/features-icon-1.png';
+import f2 from '../assets/images/features-icon-2.png';
+import f3 from '../assets/images/features-icon-3.png';
+import f4 from '../assets/images/features-icon-4.png';
+import s1 from '../assets/images/shape-7.png';
+import s2 from '../assets/images/shape-8.png';
+
+
 
 const Features = () => {
     return (
@@ -15,7 +23,7 @@ const Features = () => {
                         <div className="feature-card">
 
                             <div className="card-icon">
-                                <img src="./assets/images/features-icon-1.png" width="100" height="80" loading="lazy" alt="icon" />
+                                <img src={f1} width="100" height="80" loading="lazy" alt="icon" />
                             </div>
 
                             <h3 className="title-2 card-title">Hygienic Food</h3>
@@ -29,7 +37,7 @@ const Features = () => {
                         <div className="feature-card">
 
                             <div className="card-icon">
-                                <img src="./assets/images/features-icon-2.png" width="100" height="80" loading="lazy" alt="icon" />
+                                <img src={f2} width="100" height="80" loading="lazy" alt="icon" />
                             </div>
 
                             <h3 className="title-2 card-title">Fresh Environment</h3>
@@ -43,7 +51,7 @@ const Features = () => {
                         <div className="feature-card">
 
                             <div className="card-icon">
-                                <img src="./assets/images/features-icon-3.png" width="100" height="80" loading="lazy" alt="icon" />
+                                <img src={f3} width="100" height="80" loading="lazy" alt="icon" />
                             </div>
 
                             <h3 className="title-2 card-title">Skilled Chefs</h3>
@@ -57,7 +65,7 @@ const Features = () => {
                         <div className="feature-card">
 
                             <div className="card-icon">
-                                <img src="./assets/images/features-icon-4.png" width="100" height="80" loading="lazy" alt="icon" />
+                                <img src={f4} width="100" height="80" loading="lazy" alt="icon" />
                             </div>
 
                             <h3 className="title-2 card-title">Event & Party</h3>
@@ -69,10 +77,10 @@ const Features = () => {
 
                 </ul>
 
-                <img src="./assets/images/shape-7.png" width="208" height="178" loading="lazy" alt="shape"
+                <img src={s1} width="208" height="178" loading="lazy" alt="shape"
                     className="shape shape-1" />
 
-                <img src="./assets/images/shape-8.png" width="120" height="115" loading="lazy" alt="shape"
+                <img src={s2} width="120" height="115" loading="lazy" alt="shape"
                     className="shape shape-2" />
 
             </div>
